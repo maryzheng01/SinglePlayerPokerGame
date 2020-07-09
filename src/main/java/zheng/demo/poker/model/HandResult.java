@@ -1,9 +1,8 @@
 package zheng.demo.poker.model;
 
-
 /**
- * Lesson_4 TODO there is a bug on compare one pair, two pair try to figure out and correct
- *  if..else, StringBuilder
+ * Lesson_4 TODO there is a bug on compare one pair, two pair try to figure out
+ * and correct if..else, StringBuilder
  *
  */
 public class HandResult implements Comparable<HandResult> {
@@ -85,21 +84,21 @@ public class HandResult implements Comparable<HandResult> {
 
 	public String showResults() {
 		StringBuilder sb = new StringBuilder();
-		sb.append(ranking.getName());
-		sb.append(" [");
+		sb.append(ranking.getName()).append(": ");
 		if (primaryValuePos > -1) {
-			sb.append("  primaryValue = " + Card.VALUES[primaryValuePos]);
+			sb.append(Card.VALUES[primaryValuePos]);
 		}
 
 		if (secondaryValuePos > -1) {
-			sb.append(" secondaryValue = " + Card.VALUES[secondaryValuePos]);
-		}
-		
-		if (tertiaryValuePos > -1) {
-			sb.append(" tertiaryValue = " + Card.VALUES[tertiaryValuePos]);
+			sb.append("\n");
+			sb.append(Card.VALUES[secondaryValuePos]);
 		}
 
-		sb.append("]");
+		if (tertiaryValuePos > -1) {
+			sb.append("\n");
+			sb.append(Card.VALUES[tertiaryValuePos]);
+		}
+
 		return sb.toString();
 	}
 

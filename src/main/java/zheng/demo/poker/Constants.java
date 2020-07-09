@@ -1,8 +1,5 @@
 package zheng.demo.poker;
 
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * Lesson_10
  * static, final, String, array, array index, array element, constant variable name format, static block, hashmap

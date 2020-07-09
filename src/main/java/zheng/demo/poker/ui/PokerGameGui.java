@@ -244,7 +244,6 @@ public class PokerGameGui {
 	private void outOfCardMessage() {
 		if( redrawStartPosition == 52) {
 			JOptionPane.showMessageDialog(null, "OOPs! no more card in Deck, please click Reset!");
-			return;
 		}
 	}
 }
