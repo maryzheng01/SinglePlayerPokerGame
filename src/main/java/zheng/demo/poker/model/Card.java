@@ -1,12 +1,21 @@
 package zheng.demo.poker.model;
 
 import java.util.Arrays;
-
-import zheng.demo.poker.Constants;
+import java.util.HashMap;
+import java.util.Map;
 
 public final class Card implements Comparable<Card> {
 	public static final String[] SUITS = { "Heart", "Spade", "Club", "Diamond" };
 	public static final String[] VALUES = { "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A" };
+	private static final Map<String, String> SUITS_ICON;
+
+	static {
+		SUITS_ICON = new HashMap<>();
+		SUITS_ICON.put("Heart", "\u2665");
+		SUITS_ICON.put("Spade", "\u2660");
+		SUITS_ICON.put("Club", "\u2663");
+		SUITS_ICON.put("Diamond", "\u2666");
+	}
 
 	private final int suitIndex;
 	private final int valueIndex;
@@ -16,7 +25,7 @@ public final class Card implements Comparable<Card> {
 		this.suitIndex = suitIndex;
 		this.valueIndex = valueIndex;
 	}
-	
+
 	public Card(String suit, String faceValue) {
 		suitIndex = Arrays.asList(SUITS).indexOf(suit);
 		valueIndex = Arrays.asList(VALUES).indexOf(faceValue);
@@ -42,7 +51,7 @@ public final class Card implements Comparable<Card> {
 
 	@Override
 	public String toString() {
-		return Constants.SUITS_ICON.get(SUITS[this.suitIndex]) + VALUES[this.valueIndex] + " " + SUITS[this.suitIndex];
+		return SUITS_ICON.get(SUITS[this.suitIndex]) + VALUES[this.valueIndex] + " " + SUITS[this.suitIndex];
 	}
 
 }
