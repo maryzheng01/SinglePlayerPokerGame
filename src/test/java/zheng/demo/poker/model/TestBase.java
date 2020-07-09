@@ -12,5 +12,9 @@ public class TestBase {
 	protected Card creatCard(int suit, int value) {
 		return new Card(suit, value);
 	}
+	
+	protected Card creatCard(String suit, String value) {
+		return new Card(suit, value);
+	}
 
 }

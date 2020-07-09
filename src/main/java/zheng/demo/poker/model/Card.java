@@ -1,5 +1,7 @@
 package zheng.demo.poker.model;
 
+import java.util.Arrays;
+
 import zheng.demo.poker.Constants;
 
 public final class Card implements Comparable<Card> {
@@ -13,6 +15,11 @@ public final class Card implements Comparable<Card> {
 		super();
 		this.suitIndex = suitIndex;
 		this.valueIndex = valueIndex;
+	}
+	
+	public Card(String suit, String faceValue) {
+		suitIndex = Arrays.asList(SUITS).indexOf(suit);
+		valueIndex = Arrays.asList(VALUES).indexOf(faceValue);
 	}
 
 	@Override
