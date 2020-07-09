@@ -11,7 +11,7 @@ public class Deck {
 	private static final int SHUFFLE_EXCHANGE_TIMES = 2000;
 	public static final int DECK_SIZE = 52;
 
-	Card[] cards = new Card[DECK_SIZE];
+	private final Card[] cards = new Card[DECK_SIZE];
 
 	public Card[] drawCards(int handSize) {
 		return Arrays.copyOf(cards, handSize);
@@ -26,8 +26,7 @@ public class Deck {
 		int counter = 0;
 		for (int suit = 0; suit < Card.SUITS.length; suit++) {
 			for (int value = 0; value < Card.VALUES.length; value++) {
-				cards[counter] = new Card(suit, value);
-				counter++;
+				cards[counter++] = new Card(suit, value);
 			}
 		}
 	}
